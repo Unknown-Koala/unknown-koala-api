@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Unknown.Koala.Domain.Catalog
 {
@@ -10,32 +11,34 @@ namespace Unknown.Koala.Domain.Catalog
         public string Brand {get; set;}
         public decimal Price {get; set;}
         public List<Rating> Ratings {get; set; } = new List<Rating>();
-    }
+
     public Item(string name, string description, string brand, decimal price)
     {
-        if(string.IsNummOrEmpty(name))
+        if(string.IsNullOrEmpty(name))
         {
-            throw new ArgumentNullException(name);
+            throw new ArgumentNullException(nameof(name));
         }
         if(string.IsNullOrEmpty(description))
         {
-            throw new ArgumentNullException(description);
+            throw new ArgumentNullException(nameof(description));
         }
         if(string.IsNullOrEmpty(brand))
         {
-            throw new ArgumentNullException(brand);
+            throw new ArgumentNullException(nameof(brand));
         }
         if(price < 0.00m)
         {
             throw new ArgumentException("Price must be greater than zero.");
         }
-        name = name;
-        description = description;
-        brand = brand;
-        price = price;
+        this.Name = name;
+        this.Description = description;
+        this.Brand = brand;
+        this.Price = price;
     }
     public void AddRating(Rating rating)
     {
         this.Ratings.Add(rating);
+    }
+
     }
 }
