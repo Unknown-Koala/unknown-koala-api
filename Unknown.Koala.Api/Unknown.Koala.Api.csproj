@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Unknown.Koala.Domain\Unknown.Koala.Domain.csproj" />
+    <ProjectReference Include="..\Unknown.Koala.Data\Unknown.Koala.Data.csproj" />
   </ItemGroup>
 
 </Project>
