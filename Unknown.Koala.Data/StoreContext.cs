@@ -1,0 +1,14 @@
+﻿using Unknown.Koala.Domain.Catalog;
+using Microsoft.EntityFrameworkCore;
+
+namespace Unknown.Koala.Data
+{
+    public class StoreContext : DbContext
+    {
+        public StoreContext(DbContextOptions<StoreContext> options)
+        : base(options)
+        { }
+
+        public DbSet<Item> Items { get; set; }
+    }
+}
