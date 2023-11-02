@@ -10,6 +10,7 @@ namespace Unknown.Koala.Data
 
         public DbSet<Item> Items { get; set; }
 
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
