@@ -8,10 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddDbContext<StoreContext>(options =>
+builder.Services.AddDbContext<StoreContext>(options => 
     options.UseSqlite("Data Source=../Registrar.sqlite",
     b => b.MigrationsAssembly("Unknown.Koala.Api"))
 );
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

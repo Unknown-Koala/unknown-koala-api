@@ -60,15 +60,25 @@ namespace Unknown.Koala.Api.Controllers
                 return BadRequest();
             }
             
-            if(_db.Items.Find(id) == null)
+            var existingItem = _db.Items.Find(id); 
+
+            if (existingItem != null)
+            {
+                existingItem.Name = item.Name;
+                existingItem.Description = item.Description;
+                existingItem.Brand = item.Brand;
+                existingItem.Price = item.Price;
+
+                _db.SaveChanges();
+
+                 return NoContent();
+            }
+            else
             {
                 return NotFound();
             }
-            _db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            _db.SaveChanges();
-            
-            return NoContent();
         }
+
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {
