@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Unknown.Koala.Domain.Catalog;
 using Unknown.Koala.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Unknown.Koala.Api.Controllers
 {
@@ -28,7 +29,7 @@ namespace Unknown.Koala.Api.Controllers
             {
                 return NotFound();
             }
-            return Ok();
+            return Ok(item);
         }
 
         [HttpPost]
@@ -55,14 +56,14 @@ namespace Unknown.Koala.Api.Controllers
         [HttpPut("{id:int}")]
         public IActionResult PutItem(int id, [FromBody] Item item)
         {
-            if(id != item.Id)
+           if(id != item.Id)
             {
                 return BadRequest();
             }
             
-            var existingItem = _db.Items.Find(id); 
+           var existingItem = _db.Items.Find(id); 
 
-            if (existingItem != null)
+           if (existingItem != null)
             {
                 existingItem.Name = item.Name;
                 existingItem.Description = item.Description;
