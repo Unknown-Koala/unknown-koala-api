@@ -5,10 +5,6 @@ using Unknown.Koala.Domain.Catalog;
 public class ItemTests
 {
     [TestMethod]
-    public void TestMethod1()
-    {
-    }
-    [TestMethod]
     public void Can_Create_New_Item()
     {
         var item = new Item("Name", "Description", "Brand", 10.00m);

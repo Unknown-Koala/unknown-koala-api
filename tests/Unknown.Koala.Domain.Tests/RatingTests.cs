@@ -5,10 +5,6 @@ using Unknown.Koala.Domain.Catalog;
 public class RatingTests
 {
     [TestMethod]
-    public void TestMethod1()
-    {
-    }
-    [TestMethod]
     public void Can_Create_New_Rating()
     {
         var rating = new Rating(1, "Mike", "Great fit!");
