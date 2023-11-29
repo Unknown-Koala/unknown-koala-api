@@ -1,4 +1,6 @@
 namespace Unknown.Koala.Domain.Tests;
+
+using Microsoft.VisualBasic.FileIO;
 using Unknown.Koala.Domain.Catalog;
 
 [TestClass]
