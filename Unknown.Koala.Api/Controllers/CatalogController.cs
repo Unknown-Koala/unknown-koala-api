@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Unknown.Koala.Domain.Catalog;
 using Unknown.Koala.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Unknown.Koala.Api.Controllers
 {
@@ -81,6 +82,7 @@ namespace Unknown.Koala.Api.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize("delete:catalog")]
         public IActionResult Delete(int id)
         {
             var item = _db.Items.Find(id);
