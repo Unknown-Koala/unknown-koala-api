@@ -1,0 +1,20 @@
+###GET '/catalog' root with http
+
+GET http://localhost:5085/catalog
+
+###GET '/catalog' root with https
+GET https://localhost:7254/catalog
+
+###DELETE '/catalog attempt'
+DELETE https://localhost:7254/catalog/1
+
+###GET Token from Auth0
+curl --request POST \
+  --url https://dev-gixqtuzudb8hi1sf.us.auth0.com/oauth/token \
+  --header 'content-type: application/json' \
+  --data '{"client_id":"jNzD3xFWwB9HSJcBPAKJYGsct9AV3PO7","client_secret":"vT58Po13y61oopk_glAC-FOMSrwyCzAj28XdtDQhGQDdChTnfOpxw-SNU1yUrMQI","audience":"https://unknown-koala","grant_type":"client_credentials"}'
+
+###DELETE a item to the Catalog Collection
+  curl --request DELETE \
+    --url https://localhost:7254/catalog/2 \
+    --header 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkxOVWZPdnl4V18ya21Pcnc2T1ZPTCJ9.eyJpc3MiOiJodHRwczovL2Rldi1naXhxdHV6dWRiOGhpMXNmLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJqTnpEM3hGV3dCOUhTSmNCUEFLSllHc2N0OUFWM1BPN0BjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly91bmtub3duLWtvYWxhIiwiaWF0IjoxNzAxMjc0MjYwLCJleHAiOjE3MDEzNjA2NjAsImF6cCI6ImpOekQzeEZXd0I5SFNKY0JQQUtKWUdzY3Q5QVYzUE83Iiwic2NvcGUiOiJkZWxldGU6Y2F0YWxvZyIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.IFyhkzf2DQdGg1FadFL06-wPY4qwKeANdGUX-6QtmaCChOWRpDqqKxwgjs8smfA968Z91yJw5WaxQmmKIBAz8EessdKM-IESgmpk7qzJbbFIh1BNaddOIaFwwP42ATMvZi6KFwsH2ehb_G_lka_XJUHnM3unGXY28gdbIJuDT_a-Y3lFbUbKUXGXv6e-NtIcIRq2A9A_ifkvxI7YlvGiurlAFGnmNt805fh1vN6DkOw_GDvLCiS7uX1HAGZgLkMpyD5-sUDEuxRD-Z5gNxcREyau8LphV6zxsdZpbLttxmper8v-NV7cK3jCD7Cb1XUPnuc9mPUsB4vWlyXbfwQ1ew'
