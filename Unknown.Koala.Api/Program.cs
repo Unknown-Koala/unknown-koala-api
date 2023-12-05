@@ -13,6 +13,7 @@ string audience = builder.Configuration["Auth0:Audience"] ??
     throw new ArgumentNullException("Auth0:Audience");
 
 // Add services to the container.
+// test comment.
 
 builder.Services.AddControllers();
 
