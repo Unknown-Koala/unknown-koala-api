@@ -46,7 +46,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins("http://localhost:3000")
+        builder.WithOrigins("http://localhost:3000", "https://zealous-smoke-0442cfd0f.4.azurestaticapps.net")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
